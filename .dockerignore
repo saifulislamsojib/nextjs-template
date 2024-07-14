@@ -1,0 +1,25 @@
+node_modules/
+.next/
+out/
+.env
+*.local
+.DS_Store
+logs
+.vercel
+next-env.d.ts
+.swc
+
+# others
+.github
+.git
+.dockerignore
+.gitignore
+src/*.test.ts
+src/*.test.tsx
+src/lib/test.utils.tsx
+README.md
+jest.setup.ts
+jest.config.js
+.env.example
+.vscode
+Dockerfile
