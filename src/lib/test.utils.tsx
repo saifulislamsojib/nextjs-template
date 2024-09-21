@@ -7,17 +7,16 @@ afterEach(() => {
   cleanup();
 });
 
-function customRender(
-  ui: ReactNode,
-  options: Omit<RenderOptions, "wrapper"> = {}
-) {
+type Options = Omit<RenderOptions, "wrapper">;
+
+function customRender(ui: ReactNode, options: Options = {}) {
   return render(ui, {
     wrapper: ({ children }) => <Providers>{children}</Providers>,
     ...options,
   });
 }
 
-const setup = (ui: ReactNode, options: Omit<RenderOptions, "wrapper">) => {
+const setup = (ui: ReactNode, options?: Options) => {
   return {
     user: userEvent.setup(),
     ...customRender(ui, options),

@@ -1,3 +1,4 @@
+# gitignore
 node_modules/
 .next/
 out/
@@ -9,17 +10,18 @@ logs
 next-env.d.ts
 .swc
 
+# test files
+jest.setup.ts
+jest.config.js
+src/*.test.ts
+src/*.test.tsx
+src/lib/test.utils.tsx
+
 # others
 .github
 .git
 .dockerignore
 .gitignore
-src/*.test.ts
-src/*.test.tsx
-src/lib/test.utils.tsx
 README.md
-jest.setup.ts
-jest.config.js
 .env.example
 .vscode
-Dockerfile

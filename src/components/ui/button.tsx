@@ -7,9 +7,7 @@ type ButtonProps = {
 
 const Button = ({ children, className }: ButtonProps) => {
   return (
-    <button
-      className={cn("bg-slate-300 text-base py-2 px-3 rounded-md", className)}
-    >
+    <button className={cn("bg-slate-300 text-base py-2 px-3 rounded-md", className)}>
       {children}
     </button>
   );

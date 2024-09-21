@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import authService from "./services/authService";
 
-// This function can be marked `async` if using `await` inside
 export const middleware = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
   const isPath = (path: string) => pathname.startsWith(path);
@@ -18,17 +17,14 @@ export const middleware = async (request: NextRequest) => {
       return NextResponse.redirect(new URL("/", request.url));
     }
     return NextResponse.next();
-  } catch (error) {
+  } catch {
     if (isPath("/auth/login") || isPath("/auth/signup")) {
       return NextResponse.next();
     }
-    return NextResponse.redirect(
-      new URL(`/auth/login?redirectUrl=${pathname}`, request.url)
-    );
+    return NextResponse.redirect(new URL(`/auth/login?redirectUrl=${pathname}`, request.url));
   }
 };
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: ["/", "/auth/:path*"],
 };

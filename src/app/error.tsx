@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/button";
-import { NextError } from "@/types";
+import type { NextError } from "@/types";
 import { useEffect } from "react";
 
 const Error = ({ error, reset }: NextError) => {

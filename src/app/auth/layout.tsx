@@ -1,4 +1,4 @@
-import { LayoutProps } from "@/types";
+import type { LayoutProps } from "@/types";
 
 const AuthLayout = ({ children }: LayoutProps) => {
   return (

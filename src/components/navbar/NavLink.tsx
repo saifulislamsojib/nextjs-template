@@ -11,20 +11,9 @@ interface NavLinkProps
   exact?: boolean;
 }
 
-const NavLink = ({
-  children,
-  href,
-  exact = false,
-  activeClassName,
-  ...props
-}: NavLinkProps) => {
+const NavLink = ({ children, href, exact = false, activeClassName, ...props }: NavLinkProps) => {
   const path = usePathname();
-  const active =
-    typeof href === "string"
-      ? exact
-        ? path === href
-        : path.startsWith(href)
-      : false;
+  const active = typeof href === "string" ? (exact ? path === href : path.startsWith(href)) : false;
   const classes = clsx(props.className, active && activeClassName);
   if (classes) {
     props.className = classes;

@@ -6,23 +6,20 @@ const getHttpService = () => {
     timeout: 1500000,
   });
 
-  const responseBody = <T extends object>(response: AxiosResponse<T>) =>
-    response.data;
+  const responseBody = <T extends object>(response: AxiosResponse<T>) => response.data;
 
   const requests = {
-    get: <T extends object>(
-      url: string,
-      config?: AxiosRequestConfig<T>
-    ): Promise<T> => instance.get(url, config).then(responseBody),
+    get: <T extends object>(url: string, config?: AxiosRequestConfig<T>): Promise<T> =>
+      instance.get(url, config).then(responseBody),
     post: <T extends object>(
       url: string,
       body: object,
-      config?: AxiosRequestConfig<T>
+      config?: AxiosRequestConfig<T>,
     ): Promise<T> => instance.post(url, body, config).then(responseBody),
     patch: <T extends object>(
       url: string,
       body: object,
-      config?: AxiosRequestConfig<T>
+      config?: AxiosRequestConfig<T>,
     ): Promise<T> => instance.patch(url, body, config).then(responseBody),
     delete: (url: string, config?: AxiosRequestConfig) =>
       instance.delete(url, config).then(responseBody),

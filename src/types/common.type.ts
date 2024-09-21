@@ -6,14 +6,14 @@ export type LayoutProps = Readonly<{
 
 export type AnyObject = Record<string, unknown>;
 
-export type PageProps<P extends AnyObject = {}, S extends AnyObject = {}> = {
+export type PageProps<P extends AnyObject = AnyObject, S extends AnyObject = AnyObject> = {
   params: P;
   searchParams: S;
 };
 
 export type NextError = { error: Error; reset: () => void };
 
-export type ApiResponse<T extends object> = {
+export type ApiResponse<T extends AnyObject> = {
   success: boolean;
   message: string;
   data: T;

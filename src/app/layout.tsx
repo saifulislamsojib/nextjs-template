@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import Providers from "@/providers";
 import "@/styles/globals.css";
-import { LayoutProps } from "@/types";
+import type { LayoutProps } from "@/types";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins`}>
+      <body className={`${poppins.variable} font-poppins antialiased`}>
         <Providers>
           <Navbar />
           <main className="container mt-5">{children}</main>
