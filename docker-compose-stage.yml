@@ -8,17 +8,10 @@ services:
       - 3030:3030
     restart: always
     environment:
-      - NODE_ENV=uat
+      - NODE_ENV=production
+      - APP_ENV=staging
+      - NEXT_PUBLIC_APP_ENV=staging
       - PORT=3030
       - HOSTNAME=localhost
     env_file:
-      - .env.local
-    networks:
-      - my_network
-
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-networks:
-  my_network:
-    external: true
-    name: my_network
+      - .env.staging.local

@@ -14,13 +14,11 @@ COPY package.json pnpm-lock.yaml ./
 
 # Stage 1: Install prod dependencies
 FROM base AS deps
-# RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 # Stage 2: build the source code
 FROM base AS builder
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-# COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN pnpm build
 
@@ -37,12 +35,8 @@ COPY --from=builder /app/public ./public
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
-# Automatically leverage output traces to reduce image size
-# COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/server ./.next/server
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 
 USER nextjs
 
-# CMD [ "node", "server.js" ]
 CMD [ "pnpm", "start" ]
