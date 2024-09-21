@@ -10,13 +10,13 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-# Stage 1: Install dependencies only when needed
-FROM base AS deps
-
 COPY package.json pnpm-lock.yaml ./
+
+# Stage 1: Install dependencies
+FROM base AS deps
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-# Stage 2: Rebuild the source code only when needed
+# Stage 2: build the source code
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -35,11 +35,9 @@ RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
-# COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/server ./.next/server
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-# CMD [ "node", "server.js" ]
-CMD [ "next", "start" ]
+CMD [ "node", "server.js" ]
