@@ -12,7 +12,7 @@ next-env.d.ts
 
 # test files
 jest.setup.ts
-jest.config.js
+jest.config.mjs
 src/*.test.ts
 src/*.test.tsx
 src/lib/test.utils.tsx

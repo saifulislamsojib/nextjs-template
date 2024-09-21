@@ -14,8 +14,11 @@
     "type:check": "tsc --noEmit",
     "format": "prettier --log-level warn --write \"./**/*.{js,ts,tsx,json,d.ts,mjs}\"",
     "docker": "docker compose up",
-    "docker:sh": "docker exec -it frontend sh"
+    "docker-stage": "docker compose -f docker-compose-stage.yml up",
+    "docker:sh": "docker exec -it frontend sh",
+    "docker-stage:sh": "docker exec -it frontend_stage sh"
   },
+  "packageManager": "pnpm@9.8.0",
   "dependencies": {
     "axios": "^1.7.7",
     "clsx": "^2.1.1",
