@@ -9,14 +9,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "test": "jest",
     "test:w": "jest --watch",
     "type:check": "tsc --noEmit",
-    "format": "prettier --log-level warn --write \"./**/*.{js,ts,tsx,json,d.ts,mjs}\"",
-    "docker": "docker compose up",
-    "docker-stage": "docker compose -f docker-compose-stage.yml up",
+    "format": "prettier --log-level warn --write \"./**/*.{css,scss,js,ts,tsx,json,d.ts,mjs}\"",
+    "docker": "docker compose up -d",
+    "docker-stage": "docker compose -f docker-compose-stage.yml up -d",
     "docker:sh": "docker exec -it frontend sh",
-    "docker-stage:sh": "docker exec -it frontend_stage sh"
+    "docker-stage:sh": "docker exec -it frontend_stage sh",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
   },
   "packageManager": "pnpm@9.11.0",
   "dependencies": {
@@ -27,6 +30,7 @@
     "react-dom": "^18",
     "react-icons": "^5.3.0",
     "server-only": "^0.0.1",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
@@ -39,10 +43,13 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
+    "husky": "^9.1.6",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "^3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.12",
     "typescript": "^5"
   },
@@ -50,5 +57,9 @@
     "node": ">=20",
     "npm": ">=10",
     "pnpm": ">=9"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,d.ts,mjs}": "eslint --quiet --fix",
+    "*.{js,jsx,ts,tsx,d.ts,mjs,json,css,scss}": "prettier --log-level warn --write"
   }
 }

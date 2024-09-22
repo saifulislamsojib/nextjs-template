@@ -11,12 +11,12 @@ const NavbarMobileToggle = ({ children }: LayoutProps) => {
     <>
       <div
         onClick={() => setNavToggle((pre) => !pre)}
-        className="text-3xl cursor-pointer select-none lg:hidden"
+        className="cursor-pointer select-none text-3xl lg:hidden"
       >
         {navToggle ? <AiOutlineClose /> : <AiOutlineMenu />}
       </div>
       <ul
-        className={`flex flex-col lg:flex-row absolute lg:static top-[60px] bg-slate-100 lg:bg-transparent items-center gap-2 lg:gap-5 text-gray-600 w-full max-w-xs lg:max-w-none lg:justify-end py-2 lg:py-0 min-h-[calc(100vh-60px)] lg:min-h-0 transition-all duration-300 px-2 lg:px-0 ${
+        className={`absolute top-[60px] flex min-h-[calc(100vh-60px)] w-full max-w-xs flex-col items-center gap-2 bg-slate-100 px-2 py-2 text-gray-600 transition-all duration-300 lg:static lg:min-h-0 lg:max-w-none lg:flex-row lg:justify-end lg:gap-5 lg:bg-transparent lg:px-0 lg:py-0 ${
           navToggle ? "left-0" : "-left-full"
         }`}
       >
