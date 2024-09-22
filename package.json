@@ -12,7 +12,7 @@
     "lint:fix": "next lint --fix",
     "test": "jest",
     "test:w": "jest --watch",
-    "type:check": "tsc --noEmit",
+    "type:check": "tsc",
     "format": "prettier --log-level warn --write \"./**/*.{js,jsx,ts,tsx,d.ts,mjs,json,css,scss}\"",
     "docker": "docker compose up -d",
     "docker-stage": "docker compose -f docker-compose-stage.yml up -d",
