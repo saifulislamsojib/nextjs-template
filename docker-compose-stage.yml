@@ -4,14 +4,22 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     ports:
       - 3030:3030
-    restart: always
+    networks:
+      - my_network
     environment:
       - NODE_ENV=production
       - APP_ENV=staging
       - NEXT_PUBLIC_APP_ENV=staging
       - PORT=3030
-      - HOSTNAME=localhost
+      - HOSTNAME=0.0.0.0
     env_file:
       - .env.staging.local
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  my_network:
+    external: true
