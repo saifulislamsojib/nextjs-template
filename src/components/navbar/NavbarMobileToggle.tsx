@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutProps } from "@/types";
+import type { LayoutProps } from "@/types";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 

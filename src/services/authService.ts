@@ -1,4 +1,4 @@
-import { ApiResponse, Auth } from "@/types";
+import type { ApiResponse, Auth } from "@/types";
 import { serverRequests } from "./serverHttpService";
 
 class AuthService {

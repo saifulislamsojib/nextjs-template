@@ -1,6 +1,6 @@
-import { cleanup, render, RenderOptions } from "@testing-library/react";
+import { cleanup, render, type RenderOptions } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Providers from "../providers";
 
 afterEach(() => {

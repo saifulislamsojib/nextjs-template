@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutProps } from "@/types";
+import type { LayoutProps } from "@/types";
 
 const Providers = ({ children }: LayoutProps) => {
   return children;

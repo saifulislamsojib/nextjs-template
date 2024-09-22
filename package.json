@@ -13,7 +13,7 @@
     "test": "jest",
     "test:w": "jest --watch",
     "type:check": "tsc --noEmit",
-    "format": "prettier --log-level warn --write \"./**/*.{css,scss,js,ts,tsx,json,d.ts,mjs}\"",
+    "format": "prettier --log-level warn --write \"./**/*.{js,jsx,ts,tsx,d.ts,mjs,json,css,scss}\"",
     "docker": "docker compose up -d",
     "docker-stage": "docker compose -f docker-compose-stage.yml up -d",
     "docker:sh": "docker exec -it frontend sh",
