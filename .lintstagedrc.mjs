@@ -6,5 +6,6 @@ const buildEslintCommand = (filenames) =>
     .join(" --file ")}`;
 
 export default {
-  "*.{ts,tsx.d.ts,mjs}": [buildEslintCommand],
+  "*.{ts,tsx,d.ts,mjs}": [buildEslintCommand],
+  "*.{ts,tsx,d.ts,mjs,json,css,scss,yml,md}": "prettier --log-level warn --write",
 };

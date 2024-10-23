@@ -61,8 +61,5 @@
     "node": ">=20",
     "npm": ">=10",
     "pnpm": ">=9"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,d.ts,mjs,json,css,scss,yml,md}": "prettier --log-level warn --write"
   }
 }
