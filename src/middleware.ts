@@ -1,5 +1,4 @@
 import { type NextRequest, NextResponse } from "next/server";
-import authService from "./services/authService";
 
 export const middleware = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
@@ -9,10 +8,7 @@ export const middleware = async (request: NextRequest) => {
     if (!cookie || !cookie.startsWith("Bearer")) {
       throw new Error("Invalid token");
     }
-    const {
-      data: { user },
-    } = await authService.getCurrentUser();
-    console.log(user, "user");
+    console.log("user logged in");
     if (isPath("/auth/login") || isPath("/auth/signup")) {
       return NextResponse.redirect(new URL("/", request.url));
     }

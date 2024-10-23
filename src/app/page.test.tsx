@@ -1,4 +1,5 @@
-import { render, screen } from "@/lib/test.utils";
+import { render } from "@/lib/test.utils";
+import { screen } from "@testing-library/react";
 import HomePage from "./page";
 
 describe("Page", () => {

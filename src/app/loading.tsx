@@ -1,6 +1,6 @@
 const RootLoading = () => {
   return (
-    <div className="min-h-[calc(100vh-200px)] flex items-center justify-center">
+    <div className="flex min-h-[calc(100vh-200px)] items-center justify-center">
       <h1 className="text-center">loading ...</h1>
     </div>
   );

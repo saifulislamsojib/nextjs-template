@@ -18,6 +18,8 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const loggedIn = false;
+
   return (
     <nav className="sticky top-0 z-10 border-b bg-slate-100 py-3 shadow">
       <div className="container flex items-center justify-between lg:gap-10">
@@ -45,7 +47,7 @@ const Navbar = () => {
           </li>
           {/* any end links */}
           <li className="flex flex-col items-center gap-2 text-2xl lg:flex-row lg:gap-5">
-            {false ? (
+            {loggedIn ? (
               <Button type="submit">Logout</Button>
             ) : (
               <Link href="/auth/login">

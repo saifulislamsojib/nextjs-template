@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    restart: always
+    restart: unless-stopped
     ports:
       - 3030:3030
     networks:
@@ -16,7 +16,7 @@ services:
       - PORT=3030
       - HOSTNAME=0.0.0.0
     env_file:
-      - .env.staging.local
+      - .env.staging
 
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname

@@ -23,5 +23,4 @@ const setup = (ui: ReactNode, options?: Options) => {
   };
 };
 
-export * from "@testing-library/react";
 export { customRender as render, setup, userEvent };

@@ -3,9 +3,10 @@
 import { clsx } from "clsx";
 import Link, { type LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
+import type { AnchorHTMLAttributes } from "react";
 
 interface NavLinkProps
-  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>,
+  extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>,
     LinkProps {
   activeClassName?: string;
   exact?: boolean;
