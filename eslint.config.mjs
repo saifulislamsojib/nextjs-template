@@ -1,17 +1,25 @@
 import js from "@eslint/js";
 import next from "@next/eslint-plugin-next";
+import vitest from "@vitest/eslint-plugin";
 import { flatConfigs as importConfigs } from "eslint-plugin-import";
+import jestDom from "eslint-plugin-jest-dom";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 import { configs as tsEslintConfigs } from "typescript-eslint";
 
+const files = ["**/*.{ts,tsx,d.ts}"];
+
 export default [
+  js.configs.recommended,
   importConfigs.recommended,
   importConfigs.typescript,
-  ...tsEslintConfigs.recommended,
-  { ignores: ["**/node_modules/", "**/.next/"] },
+  react.configs.flat.recommended,
+  prettierRecommended,
+  ...tsEslintConfigs.recommendedTypeChecked.map((config) => ({ ...config, files })),
+  { ignores: ["node_modules", ".next"] },
   {
     files: ["**/*.{ts,tsx,d.ts,mjs}"],
     languageOptions: {
@@ -19,7 +27,6 @@ export default [
       globals: { ...globals.node, ...globals.browser },
       parserOptions: {
         ecmaVersion: "latest",
-        ecmaFeatures: { jsx: true },
         sourceType: "module",
       },
     },
@@ -34,14 +41,11 @@ export default [
       react: { version: "18.3" },
     },
     plugins: {
-      react,
       "react-hooks": reactHooks,
       "jsx-a11y": jsxA11y,
       "@next/next": next,
     },
     rules: {
-      ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
       ...jsxA11y.flatConfigs.recommended.rules,
@@ -50,9 +54,26 @@ export default [
     },
   },
   {
+    files,
+    languageOptions: {
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
     files: ["src/**/*.test.{ts,tsx}", "src/lib/test.utils.tsx"],
     languageOptions: {
-      globals: globals.jest,
+      globals: vitest.environments.env.globals,
+    },
+    plugins: { vitest, "jest-dom": jestDom },
+    rules: {
+      ...vitest.configs.recommended.rules,
+      ...jestDom.configs.recommended.rules,
+      "vitest/max-nested-describe": ["error", { max: 3 }],
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
     },
   },
 ];

@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-export const middleware = async (request: NextRequest) => {
+export const middleware = (request: NextRequest) => {
   const { pathname } = request.nextUrl;
   const isPath = (path: string) => pathname.startsWith(path);
   try {
