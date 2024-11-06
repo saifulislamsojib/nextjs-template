@@ -15,9 +15,9 @@ type MustHeaderConfigs = Configs & {
 
 type AnyObject = Record<string, unknown>;
 
-type RequestBody = AnyObject | FormData;
+type RequestBody = AnyObject | unknown[] | FormData;
 
-type ResponseBody = AnyObject | ArrayBuffer;
+type ResponseBody = AnyObject | unknown[] | ArrayBuffer;
 
 type ResponseType<T extends ResponseBody> = {
   status: number;
@@ -55,7 +55,7 @@ class Fetcher {
     options: FetchConfigs,
     body?: RequestBody,
   ) {
-    const timeout = options.timeout || this.timeout;
+    const timeout = options.timeout ?? this.timeout;
     const controller = options.controller || new AbortController();
     delete options.timeout;
     delete options.controller;

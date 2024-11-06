@@ -8,7 +8,7 @@ request.extractConfigs((configs) => ({
   ...configs,
   headers: {
     ...configs.headers,
-    Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
+    // Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
   },
 }));
 
