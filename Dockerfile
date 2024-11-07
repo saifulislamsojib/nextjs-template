@@ -10,19 +10,14 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
-
-# Stage 1: Install dependencies
-FROM base AS deps
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-
-# Stage 2: build the source code
+# Stage 1: Install dependencies & build the source code
 FROM base AS builder
-COPY --from=deps /app/node_modules ./node_modules
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm build
 
-# Stage 3: Production image, copy all the files and run next
+# Stage 2: Production image, copy all the files and run next
 FROM base AS runner
 
 RUN addgroup --system --gid 1001 nodejs

@@ -20,7 +20,7 @@
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.12.3",
   "dependencies": {
     "clsx": "^2.1.1",
     "next": "15.0.2",

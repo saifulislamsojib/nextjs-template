@@ -10,10 +10,10 @@ next-env.d.ts
 .swc
 
 # test files
-jest.setup.ts
-jest.config.mjs
-src/*.test.ts
-src/*.test.tsx
+vitest.config.mts
+src/**/*.test.ts
+src/**/*.test.tsx
+src/setupFile.ts
 src/lib/test.utils.tsx
 
 # others

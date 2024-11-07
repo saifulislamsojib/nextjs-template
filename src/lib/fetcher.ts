@@ -87,6 +87,12 @@ class Fetcher {
       controller.abort();
     }, timeout);
 
+    if (typeof fetch === "undefined") {
+      throw new Error(
+        "The Fetch Web API is not supported in this environment, please use in a browser environment or Node.js version >= 18",
+      );
+    }
+
     const response = await fetch(
       url.startsWith("http") ? url : `${this.baseUrl}${url}`,
       finalOptions,
