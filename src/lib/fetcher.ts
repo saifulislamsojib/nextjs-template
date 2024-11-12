@@ -1,5 +1,9 @@
 type Configs = Omit<RequestInit, "body" | "signal" | "method">;
 
+type MustHeaderConfigs = Omit<Configs, "headers"> & {
+  headers: HeadersInit;
+};
+
 type MethodConfigs = Configs & {
   timeout?: number;
   controller?: AbortController;
@@ -7,10 +11,6 @@ type MethodConfigs = Configs & {
 
 type FetchConfigs = MethodConfigs & {
   method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
-};
-
-type MustHeaderConfigs = Configs & {
-  headers: HeadersInit;
 };
 
 type AnyObject = Record<string, unknown>;

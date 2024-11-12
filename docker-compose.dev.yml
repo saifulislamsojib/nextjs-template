@@ -1,18 +1,22 @@
 services:
-  frontend:
-    container_name: frontend-template
+  frontend-dev:
+    container_name: frontend-template-dev
     build:
       context: .
-      dockerfile: Dockerfile
-    restart: always
+      dockerfile: Dockerfile.Dev
+    restart: on-failure
+    volumes:
+      - .:/app
+      - /app/.next
+      - /app/node_modules
     ports:
       - 3000:3000
     networks:
       - frontend-template
     environment:
-      - NODE_ENV=production
-      - APP_ENV=production
-      - NEXT_PUBLIC_APP_ENV=production
+      - NODE_ENV=development
+      - APP_ENV=development
+      - NEXT_PUBLIC_APP_ENV=development
       - PORT=3000
       - HOSTNAME=0.0.0.0
     env_file:

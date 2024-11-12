@@ -1,6 +1,6 @@
 services:
-  frontend_stage:
-    container_name: frontend_stage
+  frontend-stage:
+    container_name: frontend-template-stage
     build:
       context: .
       dockerfile: Dockerfile
@@ -8,7 +8,7 @@ services:
     ports:
       - 3030:3030
     networks:
-      - frontend_stage
+      - frontend-template
     environment:
       - NODE_ENV=production
       - APP_ENV=staging
@@ -21,5 +21,5 @@ services:
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
 networks:
-  frontend_stage:
-    external: true
+  frontend-template:
+    driver: bridge

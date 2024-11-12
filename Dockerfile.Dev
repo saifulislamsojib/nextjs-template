@@ -1,0 +1,16 @@
+FROM node:22-alpine AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+# libc6-compat might be needed for alpine.
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+
+# Install dependencies & run development server
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+COPY . .
+CMD [ "pnpm", "dev:d" ]
