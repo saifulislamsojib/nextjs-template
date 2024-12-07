@@ -24,4 +24,11 @@ src/lib/test.utils.tsx
 README.md
 .env.example
 .vscode
+.husky
 Dockerfile
+Dockerfile.Dev
+compose.yml
+docker-compose.dev.yml
+docker-compose.stage.yml
+.lintstagedrc.mjs
+commitlint.config.ts
