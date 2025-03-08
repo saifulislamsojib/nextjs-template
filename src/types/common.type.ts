@@ -1,19 +1,29 @@
-import type { ReactNode } from "react";
+import type { FetcherError } from '@/lib/fetcher';
+import type { ComponentProps, ReactNode } from 'react';
+
+export type Params = Record<string, string | undefined>;
+
+type ParamsPromise = Promise<Params>;
+
+export type PageProps = Readonly<{
+  params: ParamsPromise;
+  searchParams: ParamsPromise;
+}>;
+
+export type WithChildrenProps = Readonly<{
+  children: ReactNode;
+}>;
 
 export type LayoutProps = Readonly<{
+  params: ParamsPromise;
   children: ReactNode;
 }>;
 
 export type AnyObject = Record<string, unknown>;
 
-export type PageProps<P extends AnyObject = AnyObject, S extends AnyObject = AnyObject> = {
-  params: P;
-  searchParams: S;
-};
-
 export type NextError = { error: Error; reset: () => void };
 
-export type ApiResponse<T extends AnyObject> = {
+export type ApiResponse<T extends AnyObject | unknown[] = AnyObject> = {
   success: boolean;
   message: string;
   data: T;
@@ -23,11 +33,11 @@ export type ApiResponse<T extends AnyObject> = {
 };
 
 export type ApiErrorResponse = {
-  response: {
-    success: boolean;
-    type: string;
-    message: string;
-    errorDetails: Error | null;
-    stack: Error | null;
-  };
+  success: boolean;
+  type: string;
+  message: string;
 };
+
+export type FetchError = FetcherError<ApiErrorResponse>;
+
+export type SVGProps = ComponentProps<'svg'>;

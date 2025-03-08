@@ -1,15 +1,14 @@
-import Fetcher from "@/lib/fetcher";
+import configs from '@/configs';
+import Fetcher from '@/lib/fetcher';
 
-const request = new Fetcher(process.env.NEXT_PUBLIC_API_BASE_URL);
+const { IS_CLIENT, API_BASE_URL } = configs;
 
-request.setDefaultConfigs({ credentials: "include" });
+const request = new Fetcher(API_BASE_URL, IS_CLIENT ? 20000 : 0);
 
-request.extractConfigs((configs) => ({
-  ...configs,
-  headers: {
-    ...configs.headers,
-    // Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
-  },
-}));
+if (IS_CLIENT) {
+  request.setDefaultConfigs({ credentials: 'include' });
+}
+
+export const { dataExtractor } = Fetcher;
 
 export default request;

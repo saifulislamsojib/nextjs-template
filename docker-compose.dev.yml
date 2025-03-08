@@ -1,5 +1,5 @@
 services:
-  frontend-dev:
+  app-dev:
     container_name: frontend-template-dev
     build:
       context: .
@@ -14,11 +14,7 @@ services:
     networks:
       - frontend-template
     environment:
-      - NODE_ENV=development
-      - APP_ENV=development
-      - NEXT_PUBLIC_APP_ENV=development
       - PORT=3000
-      - HOSTNAME=0.0.0.0
     env_file:
       - .env.local
 

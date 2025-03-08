@@ -1,19 +1,19 @@
-import Link from "next/link";
-import { AiOutlineSearch } from "react-icons/ai";
-import Button from "../ui/button";
-import NavLink from "./NavLink";
-import NavbarMobileToggle from "./NavbarMobileToggle";
+import { Search } from 'lucide-react';
+import Link from 'next/link';
+import Button from '../ui/button';
+import NavLink from './NavLink';
+import NavbarMobileToggle from './NavbarMobileToggle';
 
 const navItems = [
   {
     id: 1,
-    path: "/",
-    title: "Home",
+    path: '/',
+    title: 'Home',
   },
   {
     id: 21,
-    path: "/about",
-    title: "About",
+    path: '/about',
+    title: 'About',
   },
 ];
 
@@ -38,7 +38,7 @@ const Navbar = () => {
           ))}
           {/* any start links */}
           <li className="flex w-full max-w-[400px] items-center rounded-xl bg-slate-200 px-2">
-            <AiOutlineSearch className="text-xl" />
+            <Search className="text-xl" />
             <input
               type="text"
               className="w-full bg-transparent px-2 py-2 focus:outline-none"

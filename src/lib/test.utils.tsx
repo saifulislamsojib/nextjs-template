@@ -1,13 +1,13 @@
-import { cleanup, render, type RenderOptions } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import type { ReactNode } from "react";
-import Providers from "../providers";
+import { cleanup, render, type RenderOptions } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import type { ReactNode } from 'react';
+import Providers from '../providers';
 
 afterEach(() => {
   cleanup();
 });
 
-type Options = Omit<RenderOptions, "wrapper">;
+type Options = Omit<RenderOptions, 'wrapper'>;
 
 function customRender(ui: ReactNode, options: Options = {}) {
   return render(ui, {

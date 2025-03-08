@@ -1,22 +1,21 @@
 services:
-  frontend:
+  app:
     container_name: frontend-template
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_APP_ENV=production
+        - NEXT_PUBLIC_API_BASE_URL=http://localhost:8080/api/v1
     restart: always
     ports:
       - 3000:3000
     networks:
       - frontend-template
     environment:
-      - NODE_ENV=production
-      - APP_ENV=production
-      - NEXT_PUBLIC_APP_ENV=production
       - PORT=3000
-      - HOSTNAME=0.0.0.0
     env_file:
-      - .env.local
+      - .env.production
 
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname

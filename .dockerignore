@@ -13,7 +13,7 @@ next-env.d.ts
 vitest.config.mts
 src/**/*.test.ts
 src/**/*.test.tsx
-src/setupFile.ts
+src/test.setup.ts
 src/lib/test.utils.tsx
 
 # others

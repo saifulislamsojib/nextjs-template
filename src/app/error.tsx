@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Button from "@/components/ui/button";
-import type { NextError } from "@/types";
-import { useEffect } from "react";
+import Button from '@/components/ui/button';
+import type { NextError } from '@/types';
+import { useEffect } from 'react';
 
 const Error = ({ error, reset }: NextError) => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const Error = ({ error, reset }: NextError) => {
   return (
     <div className="text-center">
       <h1 className="text-2xl font-semibold text-red-500">
-        {error.message || "Something went wrong happened!"}
+        {error.message || 'Something went wrong happened!'}
       </h1>
       <Button onClick={() => reset()}>Re Try</Button>
     </div>
