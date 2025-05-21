@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import next from '@next/eslint-plugin-next';
-// import vitest from '@vitest/eslint-plugin';
+// eslint-disable-next-line import/namespace, import/default, import/no-named-as-default, import/no-named-as-default-member
+import vitest from '@vitest/eslint-plugin';
 import { flatConfigs as importConfigs } from 'eslint-plugin-import';
 import jestDom from 'eslint-plugin-jest-dom';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
@@ -38,7 +39,7 @@ export default [
           extensions: ['.ts', '.tsx', '.d.ts', '.json'],
         },
       },
-      react: { version: '19.0' },
+      react: { version: '19.1' },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -70,12 +71,11 @@ export default [
   },
   {
     files: ['src/**/*.test.{ts,tsx}', 'src/lib/test.utils.tsx'],
-    // plugins: { vitest, 'jest-dom': jestDom },
-    plugins: { 'jest-dom': jestDom },
+    plugins: { vitest, 'jest-dom': jestDom },
     rules: {
-      // ...vitest.configs.recommended.rules,
+      ...vitest.configs.recommended.rules,
       ...jestDom.configs.recommended.rules,
-      // 'vitest/max-nested-describe': ['error', { max: 3 }],
+      'vitest/max-nested-describe': ['error', { max: 3 }],
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
     },

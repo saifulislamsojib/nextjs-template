@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.variable} font-poppins antialiased`}>
+      <body className={`${poppins.variable} font-poppins antialiased`} suppressHydrationWarning>
         <Providers>
           <Navbar />
           <main className="container mt-5">{children}</main>
