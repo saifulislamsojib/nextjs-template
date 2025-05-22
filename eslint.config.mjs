@@ -1,7 +1,7 @@
 import js from '@eslint/js';
 import next from '@next/eslint-plugin-next';
-// eslint-disable-next-line import/namespace, import/default, import/no-named-as-default, import/no-named-as-default-member
-import vitest from '@vitest/eslint-plugin';
+// eslint-disable-next-line import/namespace
+import { default as vitest } from '@vitest/eslint-plugin';
 import { flatConfigs as importConfigs } from 'eslint-plugin-import';
 import jestDom from 'eslint-plugin-jest-dom';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
@@ -65,7 +65,7 @@ export default [
     rules: {
       '@typescript-eslint/no-misused-promises': [
         'error',
-        { checksVoidReturn: { arguments: false } },
+        { checksVoidReturn: { attributes: false } },
       ],
     },
   },
