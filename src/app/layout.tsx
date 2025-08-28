@@ -1,7 +1,6 @@
 import Navbar from '@/components/navbar';
 import Providers from '@/providers';
 import '@/styles/globals.css';
-import type { LayoutProps } from '@/types';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   description: 'This a next app template',
 };
 
-const RootLayout = ({ children }: LayoutProps) => {
+const RootLayout = ({ children }: LayoutProps<'/'>) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} font-poppins antialiased`} suppressHydrationWarning>

@@ -1,6 +1,8 @@
-// types of commit
-// 'build', 'ci', 'docs', 'feat', 'fix', 'perf',
-// 'refactor', 'revert', 'style', 'test' 'chore'
+/**
+  types of commit
+  'build', 'ci', 'docs', 'feat', 'fix', 'perf',
+  'refactor', 'revert', 'style', 'test' 'chore'
+ */
 
 export default {
   extends: ['@commitlint/config-conventional'],

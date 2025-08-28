@@ -1,72 +1,34 @@
-import js from '@eslint/js';
 import next from '@next/eslint-plugin-next';
-// eslint-disable-next-line import/namespace
-import { default as vitest } from '@vitest/eslint-plugin';
-import { flatConfigs as importConfigs } from 'eslint-plugin-import';
+import getFlatConfigs, { devDepsImportAllowedFiles } from '@stack-lint/base';
+import reactConfigs from '@stack-lint/react';
+import getTsConfigs from '@stack-lint/typescript';
+import vitest from '@vitest/eslint-plugin';
 import jestDom from 'eslint-plugin-jest-dom';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import prettierRecommended from 'eslint-plugin-prettier/recommended';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import globals from 'globals';
-import { configs as tsEslintConfigs } from 'typescript-eslint';
 
-const files = ['**/*.{ts,tsx,d.ts}'];
+devDepsImportAllowedFiles.push('src/lib/test.utils.tsx', 'src/test.setup.ts');
 
-export default [
-  js.configs.recommended,
-  importConfigs.recommended,
-  importConfigs.typescript,
-  react.configs.flat.recommended,
-  prettierRecommended,
-  ...tsEslintConfigs.recommendedTypeChecked.map((config) => ({ ...config, files })),
-  { ignores: ['node_modules', '.next'] },
-  {
-    files: ['**/*.{ts,tsx,d.ts,mjs}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: { ...globals.node, ...globals.browser },
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
-    },
-    settings: {
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-          project: './tsconfig.json',
-          extensions: ['.ts', '.tsx', '.d.ts', '.json'],
-        },
-      },
-      react: { version: '19.1' },
-    },
-    plugins: {
-      'react-hooks': reactHooks,
-      'jsx-a11y': jsxA11y,
-      '@next/next': next,
-    },
-    rules: {
-      ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
-      ...jsxA11y.flatConfigs.recommended.rules,
-      ...next.configs.recommended.rules,
-      ...next.configs['core-web-vitals'].rules,
-    },
-  },
-  {
-    files,
-    languageOptions: {
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
+export default getFlatConfigs(
+  { ignores: ['next-env.d.ts'] },
+  ...reactConfigs,
+  ...getTsConfigs({
+    tsconfigRootDir: import.meta.dirname,
     rules: {
       '@typescript-eslint/no-misused-promises': [
         'error',
         { checksVoidReturn: { attributes: false } },
       ],
+    },
+  }),
+  {
+    plugins: {
+      '@next/next': next,
+    },
+    rules: {
+      'react/function-component-definition': 'off',
+      'import-x/exports-last': 'off',
+      'import-x/no-nodejs-modules': 'off',
+      ...next.configs.recommended.rules,
+      ...next.configs['core-web-vitals'].rules,
     },
   },
   {
@@ -80,4 +42,4 @@ export default [
       '@typescript-eslint/no-unsafe-member-access': 'off',
     },
   },
-];
+);

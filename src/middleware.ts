@@ -5,10 +5,9 @@ export const middleware = (request: NextRequest) => {
   const isPath = (path: string) => pathname.startsWith(path);
   try {
     const cookie = request.cookies.get('jwt-token')?.value;
-    if (!cookie || !cookie.startsWith('Bearer')) {
+    if (!cookie?.startsWith('Bearer')) {
       throw new Error('Invalid token');
     }
-    console.log('user logged in');
     if (isPath('/auth/login') || isPath('/auth/signup')) {
       return NextResponse.redirect(new URL('/', request.url));
     }

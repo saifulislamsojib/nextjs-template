@@ -11,7 +11,7 @@ const Error = ({ error, reset }: NextError) => {
 
   return (
     <div className="text-center">
-      <h1 className="text-accent text-2xl font-semibold">
+      <h1 className="text-2xl font-semibold text-accent">
         {error.message || 'Something went wrong happened!'}
       </h1>
       <Button onClick={() => reset()}>Re Try</Button>

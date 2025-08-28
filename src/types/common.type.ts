@@ -1,29 +1,17 @@
-import type { FetcherError } from '@/lib/fetcher';
-import type { ComponentProps, ReactNode } from 'react';
+import type { FetcherError, JsonAble } from 'fetcher-lite';
+import type { ComponentProps } from 'react';
 
 export type Params = Record<string, string | undefined>;
 
-type ParamsPromise = Promise<Params>;
-
-export type PageProps = Readonly<{
-  params: ParamsPromise;
-  searchParams: ParamsPromise;
-}>;
-
 export type WithChildrenProps = Readonly<{
-  children: ReactNode;
-}>;
-
-export type LayoutProps = Readonly<{
-  params: ParamsPromise;
-  children: ReactNode;
+  children: React.ReactNode;
 }>;
 
 export type AnyObject = Record<string, unknown>;
 
 export type NextError = { error: Error; reset: () => void };
 
-export type ApiResponse<T extends AnyObject | unknown[] = AnyObject> = {
+export type ApiResponse<T extends JsonAble = JsonAble> = {
   success: boolean;
   message: string;
   data: T;
