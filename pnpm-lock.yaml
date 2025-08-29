@@ -64,14 +64,14 @@ importers:
         specifier: ^15.5.2
         version: 15.5.2
       '@stack-lint/base':
-        specifier: ^0.0.6
-        version: 0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)
+        specifier: ^0.0.7
+        version: 0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)
       '@stack-lint/react':
-        specifier: ^0.0.6
-        version: 0.0.6(@stack-lint/base@0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)
+        specifier: ^0.0.8
+        version: 0.0.8(@next/eslint-plugin-next@15.5.2)(@stack-lint/base@0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)(react@19.1.1)
       '@stack-lint/typescript':
-        specifier: ^0.0.6
-        version: 0.0.6(@stack-lint/base@0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)(typescript@5.9.2)
+        specifier: ^0.0.7
+        version: 0.0.7(@stack-lint/base@0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)(typescript@5.9.2)
       '@tailwindcss/postcss':
         specifier: ^4.1.12
         version: 4.1.12
@@ -333,14 +333,14 @@ packages:
     resolution: {integrity: sha512-UJnjoFsmxfKUdNYdWgOB0mWUypuLvAfQPH1+pyvRJs6euowbFkFC6P13w1l8mJyi3vxYMxc9kld5jZEGRQs6bw==}
     engines: {node: '>=18'}
 
-  '@emnapi/core@1.4.5':
-    resolution: {integrity: sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==}
+  '@emnapi/core@1.5.0':
+    resolution: {integrity: sha512-sbP8GzB1WDzacS8fgNPpHlp6C9VZe+SJP3F90W9rLemaQj2PzIuTEl1qDOYQf58YIpyjViI24y9aPWCjEzY2cg==}
 
   '@emnapi/runtime@1.4.5':
     resolution: {integrity: sha512-++LApOtY0pEEz1zrd9vy1/zXVaVJJ/EbAF3u0fXIzPJEDtnITsBGbbK0EkM72amhl/R5b+5xx0Y/QhcVOpuulg==}
 
-  '@emnapi/wasi-threads@1.0.4':
-    resolution: {integrity: sha512-PJR+bOmMOPH8AtcTGAyYNiuJ3/Fcoj2XN/gBEWzDIKh254XO+mM9XoXHk5GNEhodxeMznbg7BlRojVbKN+gC6g==}
+  '@emnapi/wasi-threads@1.1.0':
+    resolution: {integrity: sha512-WI0DdZ8xFSbgMjR1sFsKABJ/C5OnRrjT06JXbZKexJGrDuPTzZdDYfFlsgcCXCyf+suG5QU2e/y1Wo2V/OapLQ==}
 
   '@esbuild/aix-ppc64@0.25.9':
     resolution: {integrity: sha512-OaGtL73Jck6pBKjNIe24BnFE6agGl+6KxDtTfHhy1HmhthfKouEcOhqpSL64K4/0WCtbKFLOdzD/44cJ4k9opA==}
@@ -897,8 +897,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@stack-lint/base@0.0.6':
-    resolution: {integrity: sha512-Ve6ysr0hr72kuI39h67gPzenKRUGe4KE/275KDPX1tX6ATLcnJo+GNmDDeMgAfylFyTKl/UwL8PF6tmlcPvcvQ==}
+  '@stack-lint/base@0.0.7':
+    resolution: {integrity: sha512-qKnfd28Y1F0NoYdwBmAZGQzJVaaiLl+4DVaeEA1FhwY6nTyxRuiIfWMB/ZWcTQx2PVwt3pAXsZhXhmrTvUP2Fg==}
     engines: {node: '>=20'}
     peerDependencies:
       eslint: '>=9'
@@ -908,19 +908,24 @@ packages:
       globals:
         optional: true
 
-  '@stack-lint/react@0.0.6':
-    resolution: {integrity: sha512-392d41x1tqjiqIw/obrtQHcM4a1LiqMktLH6sfyLfjsSMDSt8bbpKn2QrX3y/U8u0ES+PnoQ7z1cOytKo4X3pw==}
+  '@stack-lint/react@0.0.8':
+    resolution: {integrity: sha512-ne0gOnmNTanQnvP6hDyfZ1Ma2hVNva9Caz5gXWIhojZ3VN53qU4ALS42kh0ZdiNLRXjNoSoDg76ZBIwyB401WA==}
     engines: {node: '>=20'}
     peerDependencies:
-      '@stack-lint/base': '>=0.0.5'
+      '@next/eslint-plugin-next': '>=15.1'
+      '@stack-lint/base': '>=0.0.7'
       eslint: '>=9'
       prettier: '>=3'
+      react: '>=19'
+    peerDependenciesMeta:
+      '@next/eslint-plugin-next':
+        optional: true
 
-  '@stack-lint/typescript@0.0.6':
-    resolution: {integrity: sha512-4aShe9o8HrtSRg2jNEQoNgo6KmGPZiGmjSFlBHgGfMHNMrUKkYdalVT/vnwBPb8UmZVxMnejy5o300bns2Avmg==}
+  '@stack-lint/typescript@0.0.7':
+    resolution: {integrity: sha512-5kFPisb00NmOOH+hbmIY94/S/VQDqV4DIFygkJMo1OVOgyERdk16ofRAWEOIdYF4xfUlTjv3gFYoLm54bu7Q3w==}
     engines: {node: '>=20'}
     peerDependencies:
-      '@stack-lint/base': '>=0.0.5'
+      '@stack-lint/base': '>=0.0.7'
       eslint: '>=9'
       prettier: '>=3'
       typescript: '>=5.6'
@@ -3631,9 +3636,9 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.3': {}
 
-  '@emnapi/core@1.4.5':
+  '@emnapi/core@1.5.0':
     dependencies:
-      '@emnapi/wasi-threads': 1.0.4
+      '@emnapi/wasi-threads': 1.1.0
       tslib: 2.8.1
     optional: true
 
@@ -3642,7 +3647,7 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@emnapi/wasi-threads@1.0.4':
+  '@emnapi/wasi-threads@1.1.0':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -3898,7 +3903,7 @@ snapshots:
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
-      '@emnapi/core': 1.4.5
+      '@emnapi/core': 1.5.0
       '@emnapi/runtime': 1.4.5
       '@tybys/wasm-util': 0.10.0
     optional: true
@@ -4022,7 +4027,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.49.0':
     optional: true
 
-  '@stack-lint/base@0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)':
+  '@stack-lint/base@0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)':
     dependencies:
       '@eslint/js': 9.34.0
       eslint: 9.34.0(jiti@2.5.1)
@@ -4038,9 +4043,9 @@ snapshots:
       - eslint-import-resolver-node
       - supports-color
 
-  '@stack-lint/react@0.0.6(@stack-lint/base@0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)':
+  '@stack-lint/react@0.0.8(@next/eslint-plugin-next@15.5.2)(@stack-lint/base@0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)(react@19.1.1)':
     dependencies:
-      '@stack-lint/base': 0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)
+      '@stack-lint/base': 0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)
       eslint: 9.34.0(jiti@2.5.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.34.0(jiti@2.5.1))
       eslint-plugin-react: 7.37.5(eslint@9.34.0(jiti@2.5.1))
@@ -4048,10 +4053,13 @@ snapshots:
       eslint-plugin-react-prefer-function-component: 4.0.1
       globals: 16.3.0
       prettier: 3.6.2
+      react: 19.1.1
+    optionalDependencies:
+      '@next/eslint-plugin-next': 15.5.2
 
-  '@stack-lint/typescript@0.0.6(@stack-lint/base@0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)(typescript@5.9.2)':
+  '@stack-lint/typescript@0.0.7(@stack-lint/base@0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2))(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)(typescript@5.9.2)':
     dependencies:
-      '@stack-lint/base': 0.0.6(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)
+      '@stack-lint/base': 0.0.7(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(prettier@3.6.2)
       '@typescript-eslint/eslint-plugin': 8.41.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)
       '@typescript-eslint/parser': 8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)
       eslint: 9.34.0(jiti@2.5.1)
