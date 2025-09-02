@@ -6,6 +6,7 @@ out/
 .DS_Store
 logs
 .vercel
+*.tsbuildinfo
 next-env.d.ts
 .swc
 
@@ -22,7 +23,6 @@ src/lib/test.utils.tsx
 .dockerignore
 .gitignore
 README.md
-.env.example
 .vscode
 .husky
 Dockerfile
@@ -30,5 +30,4 @@ Dockerfile.Dev
 compose.yml
 docker-compose.dev.yml
 docker-compose.stage.yml
-.lintstagedrc.mjs
 commitlint.config.ts

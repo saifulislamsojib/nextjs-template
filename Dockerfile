@@ -1,4 +1,4 @@
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 # Stage 1: Install dependencies & build the source code
 FROM base AS builder
