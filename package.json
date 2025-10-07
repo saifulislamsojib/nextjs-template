@@ -47,7 +47,7 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@next/eslint-plugin-next": "^15.5.2",
     "@stack-lint/base": "^0.0.10",
-    "@stack-lint/react": "^0.0.8",
+    "@stack-lint/react": "^0.0.10",
     "@stack-lint/typescript": "^0.0.7",
     "@tailwindcss/postcss": "^4.1.12",
     "@testing-library/jest-dom": "^6.8.0",
