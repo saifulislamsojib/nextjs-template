@@ -43,7 +43,7 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
+    "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@next/eslint-plugin-next": "^16.0.7",
     "@stack-lint/base": "^0.0.11",
