@@ -1,10 +1,10 @@
 import type { FetcherError, JsonAble } from 'fetcher-lite';
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 export type Params = Record<string, string | undefined>;
 
 export type WithChildrenProps = Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>;
 
 export type AnyObject = Record<string, unknown>;
