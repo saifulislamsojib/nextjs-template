@@ -62,7 +62,7 @@
     "eslint": "^9.39.2",
     "eslint-plugin-jest-dom": "^5.5.0",
     "husky": "^9.1.7",
-    "jsdom": "^27.3.0",
+    "jsdom": "^27.4.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
