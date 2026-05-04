@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.3",
     "@next/eslint-plugin-next": "16.2.4",
     "@stack-lint/base": "^0.1.0",
     "@stack-lint/react": "^0.1.0",
