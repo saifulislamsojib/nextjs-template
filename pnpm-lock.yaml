@@ -61,14 +61,14 @@ importers:
         specifier: ^20.5.3
         version: 20.5.3
       '@next/eslint-plugin-next':
-        specifier: 16.2.4
-        version: 16.2.4
+        specifier: 16.2.6
+        version: 16.2.6
       '@stack-lint/base':
         specifier: ^0.1.0
         version: 0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3)
       '@stack-lint/react':
         specifier: ^0.1.0
-        version: 0.1.0(@next/eslint-plugin-next@16.2.4)(@stack-lint/base@0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3))(eslint@10.2.1(jiti@2.6.1))(prettier@3.8.3)(react@19.2.4)
+        version: 0.1.0(@next/eslint-plugin-next@16.2.6)(@stack-lint/base@0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3))(eslint@10.2.1(jiti@2.6.1))(prettier@3.8.3)(react@19.2.4)
       '@stack-lint/typescript':
         specifier: ^0.1.0
         version: 0.1.0(@stack-lint/base@0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3))(eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1)))(eslint@10.2.1(jiti@2.6.1))(prettier@3.8.3)(typescript@6.0.3)
@@ -621,8 +621,8 @@ packages:
   '@next/env@16.2.4':
     resolution: {integrity: sha512-dKkkOzOSwFYe5RX6y26fZgkSpVAlIOJKQHIiydQcrWH6y/97+RceSOAdjZ14Qa3zLduVUy0TXcn+EiM6t4rPgw==}
 
-  '@next/eslint-plugin-next@16.2.4':
-    resolution: {integrity: sha512-tOX826JJ96gYK/go18sPUgMq9FK1tqxBFfUCEufJb5XIkWFFmpgU7mahJANKGkHs7F41ir3tReJ3Lv5La0RvhA==}
+  '@next/eslint-plugin-next@16.2.6':
+    resolution: {integrity: sha512-Z8l6o4JWKUl755x4R+wogD86KPeU+Ckw4K+SYG4kHeOJtRenDeK+OSbGcqZpDtbwn9DsJVdir2UxmwXuinUbUw==}
 
   '@next/swc-darwin-arm64@16.2.4':
     resolution: {integrity: sha512-OXTFFox5EKN1Ym08vfrz+OXxmCcEjT4SFMbNRsWZE99dMqt2Kcusl5MqPXcW232RYkMLQTy0hqgAMEsfEd/l2A==}
@@ -3625,7 +3625,7 @@ snapshots:
 
   '@next/env@16.2.4': {}
 
-  '@next/eslint-plugin-next@16.2.4':
+  '@next/eslint-plugin-next@16.2.6':
     dependencies:
       fast-glob: 3.3.1
 
@@ -3759,7 +3759,7 @@ snapshots:
       - eslint-import-resolver-node
       - supports-color
 
-  '@stack-lint/react@0.1.0(@next/eslint-plugin-next@16.2.4)(@stack-lint/base@0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3))(eslint@10.2.1(jiti@2.6.1))(prettier@3.8.3)(react@19.2.4)':
+  '@stack-lint/react@0.1.0(@next/eslint-plugin-next@16.2.6)(@stack-lint/base@0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3))(eslint@10.2.1(jiti@2.6.1))(prettier@3.8.3)(react@19.2.4)':
     dependencies:
       '@stack-lint/base': 0.1.0(@typescript-eslint/utils@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(globals@17.5.0)(prettier@3.8.3)
       eslint: 10.2.1(jiti@2.6.1)
@@ -3770,7 +3770,7 @@ snapshots:
       prettier: 3.8.3
       react: 19.2.4
     optionalDependencies:
-      '@next/eslint-plugin-next': 16.2.4
+      '@next/eslint-plugin-next': 16.2.6
     transitivePeerDependencies:
       - supports-color
 
